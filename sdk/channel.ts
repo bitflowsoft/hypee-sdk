@@ -3,9 +3,14 @@ export interface ChannelEmitter {
   send: (channelName: string, argv: any[]) => void;
 }
 
+export interface ChannelRegister {
+  subscribe: (channelName: string, subscriber: (channel: ChannelEmitter, argv: any[]) => void) => void;
+  remove: (channelName: string) => void;
+}
+
 const channelRegistry: {[key: string]: (channel: ChannelEmitter, argv: any[]) => void} = {};
 
-export const channelRegister = {
+export const channelRegister: ChannelRegister = {
   subscribe: (channelName: string, subscriber: (channel: ChannelEmitter, argv: any[]) => void) => {
     if (channelName in channelRegistry) {
       return;

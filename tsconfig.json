@@ -108,5 +108,6 @@
     "outDir": "./dist",
     "rootDir": "./",
     "sourceMap": true,
+    "declaration": true
   }
 }

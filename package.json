@@ -1,15 +1,17 @@
 {
-  "name": "hypee-plugin",
-  "version": "0.0.1",
-  "description": "hypee plugin library",
-  "main": "index.js",
+  "name": "hypee-sdk",
+  "version": "0.0.4",
+  "description": "hypee plugin sdk",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ."
+    "build": "rm -fr dist/* && tsc -p .",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitflowsoft/hypee-plugin.git"
+    "url": "git+https://github.com/bitflowsoft/hypee-sdk.git"
   },
   "keywords": [
     "hypee",
@@ -18,11 +20,16 @@
   "author": "bitflowsoft",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bitflowsoft/hypee-plugin/issues"
+    "url": "https://github.com/bitflowsoft/hypee-sdk/issues"
   },
-  "homepage": "https://github.com/bitflowsoft/hypee-plugin#readme",
+  "homepage": "https://github.com/bitflowsoft/hypee-sdk#readme",
   "devDependencies": {
     "ts-node": "10.9.1",
     "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "@types/decompress": "4.2.7",
+    "axios": "1.6.1",
+    "decompress": "4.2.1"
   }
 }
